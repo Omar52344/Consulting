@@ -1,26 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  
+
+
+  <title>TecActiva Omar Jaramillo</title>
+
+
+<script src="{{ asset('js/app.js') }}" defer></script>
+
 
   <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <!-- Styles -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
+
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Consulting
+                    TecActiva
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -31,12 +39,10 @@
                     <ul class="navbar-nav me-auto">
 
 
-                    <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('buscar') }}">{{ __('Buscar') }}</a>
-                                </li>
+                    
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('nueva') }}">{{ __('Nueva') }}</a>
+                                    <a class="nav-link" href="{{ route('nuevoproducto') }}">{{ __('Nuevo') }}</a>
                                 </li>
 
 
@@ -64,7 +70,7 @@
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -86,48 +92,68 @@
 
 
 
+<h1 class="alert-dark">Ingrese Nuevo Producto</h1>
+</center>
+<form action="{{url('/productos/'.$producto->id)}}" method="post" enctype="multipart/form-data">
+@csrf
+{{method_field('PATCH')}}
+           <div class="form-group">
+          <label for="">ID</label>
+          <input type="text" name="id" id="" class="form-control" placeholder="" aria-describedby="helpId" value={{$producto->id}}>
+  
+  <br>
+
+        <label for="">Nombre Producto</label>
+        <input type="text" name="nombre_producto" id="" class="form-control" placeholder="" aria-describedby="helpId" value={{$producto->nombre_producto}}>
+   <br>
+
+      <label for="">Descripcion</label>
+      <input type="text" name="descripcion" id="" class="form-control" placeholder="" aria-describedby="helpId" value={{$producto->descripcion}}>
+
+<br>
+
+      <label for="">Precio</label>
+       <input type="textarea" name="precio" id="" class="form-control" placeholder="" aria-describedby="helpId"value={{$producto->precio}}>
 
 
-
-
+       <label for="">Estado</label>
+       <input type="number" name="estado" id="" class="form-control" placeholder="" aria-describedby="helpId" value={{$producto->estado}}>
+       <br>
 
   
 
-<form action="{{url('/enviarbuscar')}}" method="post" enctype="multipart/form-data">
-@csrf
-
-<label for="cars">Seleccione busqueda </label>
+       
 
 
 
-<select id="tipos"name="tipo">
-       <option value="id">id</option>
-       <option value="valortotal">valor total</option>
-       <option value="ivatotal">iva total</option>
-       <option value="itemscompra">items compra</option>
-       <option value="valorescompra">valores compra</option>
-       <option value="ivaindividual">iva individual</option>
-       <option value="pagada">pagada</option>
-</select>
+</div>
 
+      <input class="btn-primary" type="submit" value="Enviar">
+    
+    
+    
+    </form>
 
-<label for="descripcion">Valor De busqueda</label>
-  <input type="text" name="entrada" id="" class="form-control" placeholder="" aria-describedby="helpId">
-  <br>
-
-  <input class="btn-primary" type="submit" value="Buscar">
-
-
-</form>
-
-
-
-
-
-
-
+                         
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

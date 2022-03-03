@@ -72,7 +72,7 @@
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -98,45 +98,48 @@
 </center>
 <form action="{{url('/facturas')}}" method="post" enctype="multipart/form-data">
 @csrf
-<div class="form-group">
-  <label for="valorEgreso">ID</label>
-  <input type="text" name="id" id="" class="form-control" placeholder="" aria-describedby="helpId">
+           <div class="form-group">
+          <label for="valorEgreso">ID</label>
+          <input type="text" name="id" id="" class="form-control" placeholder="" aria-describedby="helpId">
   
   <br>
 
-  <label for="descripcion">valor Total</label>
-  <input type="text" name="valor_total" id="" class="form-control" placeholder="" aria-describedby="helpId">
-  <br>
+        <label for="descripcion">valor Total</label>
+        <input type="text" name="valor_total" id="" class="form-control" placeholder="" aria-describedby="helpId">
+   <br>
 
-  <label for="descripcion">Iva Total</label>
-  <input type="text" name="iva_total" id="" class="form-control" placeholder="" aria-describedby="helpId">
+      <label for="descripcion">Iva Total</label>
+      <input type="text" name="iva_total" id="" class="form-control" placeholder="" aria-describedby="helpId">
 
 <br>
 
-  <label for="descripcion">ItemsCompra</label>
-  <input type="textarea" name="items_compra" id="" class="form-control" placeholder="" aria-describedby="helpId">
+      <label for="descripcion">ItemsCompra</label>
+       <input type="textarea" name="items_compra" id="" class="form-control" placeholder="" aria-describedby="helpId">
 
 
-  <label for="descripcion">elementos Compra</label>
-  <input type="textarea" name="valores_compra" id="" class="form-control" placeholder="" aria-describedby="helpId">
-  <br>
+       <label for="descripcion">elementos Compra</label>
+       <input type="textarea" name="valores_compra" id="" class="form-control" placeholder="" aria-describedby="helpId">
+       <br>
 
   
 
-  <label for="descripcion">iva Individual</label>
-  <input type="text" name="iva_individual" id="" class="form-control" placeholder="" aria-describedby="helpId">
-  <br>
+        <label for="descripcion">iva Individual</label>
+       <input type="text" name="iva_individual" id="" class="form-control" placeholder="" aria-describedby="helpId">
+       <br>
 
-  <label for="descripcion">Pagada</label>
-  <input type="text" name="pagada" id="" class="form-control" placeholder="" aria-describedby="helpId">
+      <label for="descripcion">Pagada</label>
+       <input type="text" name="pagada" id="" class="form-control" placeholder="" aria-describedby="helpId">
 
 
 
 
 </div>
 
-<input class="btn-primary" type="submit" value="Enviar">
-</form>
+      <input class="btn-primary" type="submit" value="Enviar">
+    
+    
+    
+    </form>
 
                          
 </body>

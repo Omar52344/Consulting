@@ -129,7 +129,7 @@
                          <td style="width:150px;" class = text-left>{{ $m->iva_individual }} </td>
                          <td style="width:150px;" class = text-left>{{ $m->pagada }} </td>
 
-                         <td style="width:150px;" class = text-left>{{ $m->pagada }} </td>
+                         
 
                          <td style="width:150px;" class = text-left>
                          

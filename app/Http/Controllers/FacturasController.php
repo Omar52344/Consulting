@@ -137,6 +137,7 @@ class FacturasController extends Controller
     public function update(Request $request, $id)
     {
         $datos = request()->except('_token','_method');
+        
         Facturas::where('id','=',$id)->update($datos);
 
         $factura= Facturas::findOrFail($id);

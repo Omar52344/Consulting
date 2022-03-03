@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulting Omar Jaramillo</title>
+    <title>TecActiva Omar Jaramillo</title>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -20,7 +20,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Consulting
+                    TecActiva
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -31,12 +31,10 @@
                     <ul class="navbar-nav me-auto">
 
 
-                    <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('buscar') }}">{{ __('Buscar') }}</a>
-                                </li>
+                    
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('nueva') }}">{{ __('Nueva') }}</a>
+                                    <a class="nav-link" href="{{ route('nuevoproducto') }}">{{ __('Nuevo') }}</a>
                                 </li>
 
 
@@ -87,30 +85,30 @@
                 <thead>
                     <tr> 
                         <th  style="width:150px;"class="text-left">Id</th>
-                        <th  style="width:150px;"class="text-left">valortotal</th>
-                        <th style="width:150px;" class="text-left">IvaTotal</th>
-                        <th style="width:150px;" class="text-left">Items Compra</th>
-                        <th style="width:150px;" class="text-left">Valores Compra</th>
-                        <th style="width:150px;" class="text-left">Iva Individual</th>
-                        <th style="width:150px;" class="text-left">Pagada</th>                        
+                        <th  style="width:150px;"class="text-left">nombre</th>
+                        <th style="width:150px;" class="text-left">Precio</th>
+                        <th style="width:150px;" class="text-left">Estado</th>
+                        <th style="width:150px;" class="text-left">Publicacion</th>
+                        <th style="width:150px;" class="text-left"></th>
+                        
+                                             
                     </tr>
                 </thead>
                 <tbody>
-                     @foreach($facturas as $m)
+                     @foreach($producto as $m)
                      <tr>
                         <td style="width:150px;" class = text-left>{{ $m->id }} </td>
-                         <td style="width:150px;" class = text-left>{{ $m->valor_total }} </td>
-                         <td style="width:150px;" class = text-left>{{ $m->iva_total }} </td>
-                         <td style="width:150px;" class = text-left>{{ $m->items_compra }} </td>
-                         <td style="width:150px;" class = text-left>{{ $m->valores_compra }} </td>
-                         <td style="width:150px;" class = text-left>{{ $m->iva_individual }} </td>
-                         <td style="width:150px;" class = text-left>{{ $m->pagada }} </td>
+                         <td style="width:150px;" class = text-left>{{ $m->nombre_producto }} </td>
+                         <td style="width:150px;" class = text-left>{{ $m->precio }} </td>
+                         <td style="width:150px;" class = text-left>{{ $m->estado }} </td>
+                         <td style="width:150px;" class = text-left>{{ $m->created_at }} </td>
+                         
 
                          
 
                          <td style="width:150px;" class = text-left>
                          
-                         <a href="{{url('facturas/'.$m->id.'/edit')}}" >Editar</a>
+                         <a href="{{url('productos/'.$m->id.'/edit')}}" >Editar</a>
                          
 
                       
@@ -119,7 +117,7 @@
 
                          </form> </td>
 
-                         <td style="width:150px;" class = text-left><form action="{{url('facturas/'.$m->id)}}" method="post">
+                         <td style="width:150px;" class = text-left><form action="{{url('productos/'.$m->id)}}" method="post">
                       
                          @csrf
                       {{method_field('DELETE')}}

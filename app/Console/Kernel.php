@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,7 +17,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        //$obj = new ProductController();
+       // $schedule->command() 
+       $schedule->command('minute:registro')->everyTwoMinutes();
+       // $obj->calendario()
+            
+
+       // })->everyTwoMinutes();
     }
 
     /**
