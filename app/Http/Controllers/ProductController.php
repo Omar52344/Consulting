@@ -16,6 +16,10 @@ class ProductController extends Controller
     {
         $producto = Product::all();
 
+        $peticion= new PeticionController;
+        $peticion->registrar();
+        
+
          return  view( 'productos.index',  compact('producto') );
     }
 
@@ -26,6 +30,8 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $peticion= new PeticionController;
+        $peticion->registrar();
         return  view( 'productos.create');
     }
 
@@ -39,7 +45,8 @@ class ProductController extends Controller
     {
         $datos = request()->except('_token');
 
-         
+        $peticion= new PeticionController;
+        $peticion->registrar();
 
         Product::insert($datos);
 
@@ -66,6 +73,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $datos = request()->except('_token');
+        $peticion= new PeticionController;
+        $peticion->registrar();
 
         $producto= Product::findOrFail($id);
 
@@ -82,6 +91,9 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $datos = request()->except('_token','_method');
+        
+        $peticion= new PeticionController;
+        $peticion->registrar();
         
         Product::where('id','=',$id)->update($datos);
 
@@ -100,12 +112,17 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::destroy($id);
+        $peticion= new PeticionController;
+        $peticion->registrar();
 
         return redirect('productos');
     }
 
 
     public function calendario(){
+
+        $peticion= new PeticionController;
+        $peticion->registrar();
 
         
 

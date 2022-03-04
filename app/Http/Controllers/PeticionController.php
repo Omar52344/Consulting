@@ -82,4 +82,11 @@ class PeticionController extends Controller
     {
         //
     }
+
+    public function registrar(){
+
+        $peticion= new Peticion;
+        $peticion->save();
+
+    }
 }

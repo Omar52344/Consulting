@@ -92,7 +92,7 @@
 
 
 
-<h1 class="alert-dark">Ingrese Nuevo Producto</h1>
+<h1 class="alert-dark">Editar Producto</h1>
 </center>
 <form action="{{url('/productos/'.$producto->id)}}" method="post" enctype="multipart/form-data">
 @csrf

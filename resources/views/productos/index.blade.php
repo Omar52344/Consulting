@@ -81,7 +81,7 @@
         </nav>
 
 
-<table class="table table-striped">
+<table class="table  table-hover">
                 <thead>
                     <tr> 
                         <th  style="width:150px;"class="text-left">Id</th>
@@ -100,8 +100,18 @@
                         <td style="width:150px;" class = text-left>{{ $m->id }} </td>
                          <td style="width:150px;" class = text-left>{{ $m->nombre_producto }} </td>
                          <td style="width:150px;" class = text-left>{{ $m->precio }} </td>
-                         <td style="width:150px;" class = text-left>{{ $m->estado }} </td>
+
+                         @if ($m->estado === 1)
+                         <td style="width:150px;" class = text-left>Publicado </td>
+                         @else
+                         <td style="width:150px;" class = text-left>Sin Publicar </td>
+                         @endif
+                            
                          <td style="width:150px;" class = text-left>{{ $m->created_at }} </td>
+
+
+                         
+                        
                          
 
                          
@@ -135,6 +145,8 @@
 
 </body>
 </html>
+
+
 
 
 
